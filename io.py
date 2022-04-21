@@ -4,7 +4,7 @@ from itertools import product
 import json
 
 import numpy as np
-from PyQt5 import QtCore, QtWidgets
+# from PyQt5 import QtCore, QtWidgets
 
 
 class ProjectIO:
@@ -582,7 +582,8 @@ def get_table_text(model, newline='\n', delimiter='\t'):
         Text that can be exported or pasted
     """
     # Get header
-    header = [model.headerData(i, QtCore.Qt.Horizontal, QtCore.Qt.DisplayRole)
+    # header = [model.headerData(i, QtCore.Qt.Horizontal, QtCore.Qt.DisplayRole)
+    header = [model.headerData(i)
               for i in range(model.columnCount(None))]
     if header[0] == 'ID':
         header[0] = 'Id'
@@ -605,10 +606,11 @@ def table_to_csv(model, mainwindow, path=None):
     """
 
     if path is None:
-        options = QtWidgets.QFileDialog.Options() | QtWidgets.QFileDialog.DontUseNativeDialog
-        # Set current dir
-        currentdir = mainwindow.appsettings.value('currentdir', '.', type=str)
-        path, _ = QtWidgets.QFileDialog.getSaveFileName(mainwindow, 'Anduryl - Save as CSV', '.', "CSV (*.csv)", options=options)
+        pass
+        # options = QtWidgets.QFileDialog.Options() | QtWidgets.QFileDialog.DontUseNativeDialog
+        # # Set current dir
+        # currentdir = mainwindow.appsettings.value('currentdir', '.', type=str)
+        # path, _ = QtWidgets.QFileDialog.getSaveFileName(mainwindow, 'Anduryl - Save as CSV', '.', "CSV (*.csv)", options=options)
 
     if not path:
         return None
