@@ -30,15 +30,15 @@ if __name__ == '__main__':
     # app.setApplicationVersion(__version__)
 
     # Import GUI
-    from anduryl.ui.main import MainWindow
+    # from anduryl.ui.main import MainWindow
 
     # Create main window
-    ex = MainWindow()
+    # ex = MainWindow()
     # splash.close()
     # ex.start_profiling()
 
     # Open project
-    if len(sys.argv) > 1:
-        ex.open_project(fname=sys.argv[1])
+    # if len(sys.argv) > 1:
+    #     ex.open_project(fname=sys.argv[1])
 
-    sys.exit(app.exec_())
+    # sys.exit(app.exec_())
